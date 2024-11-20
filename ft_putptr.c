@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned long long n)
+static	int	ft_puthex(unsigned long long n)
 {
 	long	count;
 	char	*symbole;

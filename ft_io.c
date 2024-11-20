@@ -37,7 +37,7 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-char	*ft_symbole_case(char letter_case)
+static	char	*ft_symbole_case(char letter_case)
 {
 	if (letter_case == 'U')
 		return ("0123456789ABCDEF");

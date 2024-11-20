@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	print_format(char s, va_list ap)
+static	int	print_format(char s, va_list ap)
 {
 	long	count;
 
@@ -26,20 +26,22 @@ int	print_format(char s, va_list ap)
 	else if (s == 'd' || s == 'i')
 		count += ft_putnbr_base(va_arg(ap, int), 10, 'L');
 	else if (s == 'u')
-		count += ft_putnbr_base((unsigned int)va_arg(ap, int), 10, 'L');
+		count += ft_putnbr_base(va_arg(ap, unsigned int), 10, 'L');
 	else if (s == 'x' || s == 'X')
 	{
 		if (s == 'x')
-			count += ft_putnbr_base((long)va_arg(ap, unsigned int), 16, 'L');
+			count += ft_putnbr_base(va_arg(ap, unsigned int), 16, 'L');
 		else
-			count += ft_putnbr_base((long)va_arg(ap, unsigned int), 16, 'U');
+			count += ft_putnbr_base(va_arg(ap, unsigned int), 16, 'U');
 	}
 	else if (s == '%')
 		count += ft_putchar('%');
+	else
+		count += ft_putchar(s);
 	return (count);
 }
 
-int	ft_check(int ret, va_list ap)
+static	int	ft_check(int ret, va_list ap)
 {
 	if (ret == -1)
 	{
