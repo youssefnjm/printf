@@ -14,7 +14,7 @@
 
 static	int	print_format(char s, va_list ap)
 {
-	long	count;
+	int	count;
 
 	count = 0;
 	if (s == 'c')
@@ -53,7 +53,7 @@ static	int	ft_check(int ret, va_list ap)
 
 int	ft_printf(const char *str, ...)
 {
-	size_t	count;
+	int	count;
 	int		ret;
 	va_list	ap;
 

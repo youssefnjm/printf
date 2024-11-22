@@ -19,7 +19,7 @@ int	ft_putchar(int c)
 
 int	ft_putstr(char *str)
 {
-	unsigned long long	i;
+	int	i;
 
 	i = 0;
 	if (str == NULL)
@@ -47,7 +47,7 @@ static	char	*ft_symbole_case(char letter_case)
 
 int	ft_putnbr_base(long n, int base, char letter_case)
 {
-	long	count;
+	int		count;
 	char	*symbole;
 
 	symbole = ft_symbole_case(letter_case);
@@ -72,7 +72,7 @@ int	ft_putnbr_base(long n, int base, char letter_case)
 
 int	ft_put_uns_int(unsigned int n)
 {
-	size_t	count;
+	int	count;
 
 	if (n < 10)
 		return (ft_putchar(n + 48));

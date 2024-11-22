@@ -14,7 +14,7 @@
 
 static	int	ft_puthex(unsigned long long n)
 {
-	long	count;
+	int		count;
 	char	*symbole;
 
 	symbole = "0123456789abcdef";
